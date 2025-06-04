@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Background Hearts Pattern */
+        body {
+            background-image: none;
+        }
+
+        /* Add 10 hearts in random positions */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url('assets/hearts.png'),
+                url('assets/hearts.png'),
+                url('assets/hearts.png'),
+                url('assets/hearts.png'),
+                url('assets/hearts.png'),
+                url('assets/hearts.png'),
+                url('assets/hearts.png'),
+                url('assets/hearts.png'),
+                url('assets/hearts.png'),
+                url('assets/hearts.png');
+            background-size: 50px;
+            background-repeat: no-repeat;
+            background-position: 
+                2% 5%,
+                2% 95%,
+                98% 5%,
+                98% 95%,
+                20% 15%,
+                20% 85%,
+                80% 15%,
+                80% 85%,
+                50% 5%,
+                50% 95%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Book Animation Styles */
+        .book-container {
+            position: fixed;
+            right: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .book {
+            position: relative;
+            border-radius: 10px;
+            width: 260px;
+            height: 340px;
+            background-color: #ffd1dc;
+            border: 1px solid #d4d4d4;
+            -webkit-transform: preserve-3d;
+            -ms-transform: preserve-3d;
+            transform: preserve-3d;
+            -webkit-perspective: 2000px;
+            perspective: 2000px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            color: #000;
+            background-image: 
+                linear-gradient(to right, #ff9eb5 1px, transparent 1px),
+                linear-gradient(to bottom, #ff9eb5 1px, transparent 1px);
+            background-size: 15px 15px;
+        }
+
+        .cover {
+            top: 0;
+            position: absolute;
+            background-color: #ffd1dc;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: 1px solid #d4d4d4;
+            cursor: pointer;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            -webkit-transform-origin: 0;
+            -ms-transform-origin: 0;
+            transform-origin: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .book:hover .cover {
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            -webkit-transform: rotatey(-85deg);
+            -ms-transform: rotatey(-85deg);
+            transform: rotatey(-85deg);
+        }
+
+        .book p {
+            font-size: 16px;
+            padding: 20px;
+            line-height: 1.5;
+            background-color: rgba(255, 209, 220, 0.5);
+            border-radius: 5px;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Layout adjustments */
+        .flex-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-field {
+            position: relative;
+            margin: 20px 0;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #f472b6;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .input-field input:focus {
+            outline: none;
+            border-color: #ec4899;
+            box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+        }
+        .input-field label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        .input-field input:focus + label,
+        .input-field input:not(:placeholder-shown) + label {
+            top: 0;
+            left: 10px;
+            font-size: 12px;
+            background: white;
+            padding: 0 5px;
+            color: #ec4899;
+        }
+        .button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        .button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        .button:focus:not(:active)::after {
+            animation: ripple 250ms ease-out;
+        }
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        /* New Input Styles */
+        .group {
+            display: flex;
+            line-height: 30px;
+            align-items: center;
+            position: relative;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        .input {
+            width: 100%;
+            height: 45px;
+            line-height: 30px;
+            padding: 0 5rem;
+            padding-left: 3rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            outline: none;
+            background-color: #f8fafc;
+            color: #0d0c22;
+            transition: .5s ease;
+        }
+
+        .input::placeholder {
+            color: #94a3b8;
+        }
+
+        .input:focus, .input:hover {
+            outline: none;
+            border-color: rgba(129, 140, 248);
+            background-color: #fff;
+            box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
+        }
+
+        .icon {
+            position: absolute;
+            left: 1rem;
+            fill: none;
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Video Container Styles */
+        .video-container {
+            position: fixed;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Adjust main content position */
+        .main-content {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body class="bg-[#F5F5DC] min-h-screen flex items-center justify-center">
+    <audio id="backgroundMusic" src="./assets/beautiful-boy-darling-boy_UZOUhniV.mp3" autoplay loop>
+    </audio>
+
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="assets/video 1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="book-container">
+        <div class="book">
+            <p style="font-size: 16px; padding: 20px; line-height: 1.5;">happy birthday to my favourite human being. you make everything better—life, love, even bad days.<br><br>thank u for being my safe space, my clown, my cuddle bug 🫶</p>
+            <div class="cover">
+                <p>Dump Here</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content text-center space-y-8 p-8 max-w-md w-full">
+        <div class="mb-8">
+            <img src="assets/photo 1.jpg" alt="Profile Photo" class="rounded-lg mx-auto w-64 h-64 object-cover shadow-lg">
+        </div>
+        
+        <h1 class="text-3xl font-extrabold text-pink-600 mb-8">your favourite restaurant</h1>
+        
+        <form id="nameForm" class="space-y-6">
+            <div class="group">
+                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M12 1C8.676 1 6 3.676 6 7v3H4v12h16V10h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v3H8V7c0-2.276 1.724-4 4-4z" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <input type="password" class="input" id="nameInput" placeholder="password" required>
+            </div>
+            
+            <button type="submit" class="button w-full px-8 py-4 bg-pink-500 text-white rounded-lg text-xl font-semibold hover:bg-pink-600 transition-all duration-300">
+                click me :)
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // Background Music Controls
+        const bgMusic = document.getElementById('backgroundMusic');
+        
+        // Set volume to maximum
+        bgMusic.volume = 1.0;
+        
+        // Try to play when the page loads
+        window.onload = function() {
+            bgMusic.play().catch(function(error) {
+                console.log("Playback failed:", error);
+            });
+        };
+
+        // Password encryption and validation
+        function encryptPassword(password) {
+            // Simple encryption using base64
+            return btoa(password);
+        }
+
+        function validatePassword(inputPassword) {
+            // Encrypt the input and compare with encrypted correct answer
+            const encryptedInput = encryptPassword(inputPassword.toLowerCase());
+            const correctAnswer = encryptPassword('kurukare');
+            return encryptedInput === correctAnswer;
+        }
+
+        // Form submission with password validation
+        document.getElementById('nameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('nameInput').value;
+            
+            if (validatePassword(password)) {
+                // Password is correct, proceed to next page
+                localStorage.setItem('userName', password);
+                window.location.href = 'index.html';
+            } else {
+                // Password is incorrect, show error message
+                alert('Incorrect password! Try again.');
+                document.getElementById('nameInput').value = '';
+            }
+        });
+    </script>
+</body>
+</html> 

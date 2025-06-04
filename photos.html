@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Album - Our Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('assets/photo album background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+        }
+        .page-title {
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: var(--primary-color);
+            margin: 2rem 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .album-section {
+            padding: 1rem;
+            margin-bottom: 2rem;
+            width: 220px;
+            display: inline-block;
+            margin: 1rem;
+            vertical-align: top;
+        }
+        .album-cover {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .album-cover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        .album-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .album-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 0.8rem;
+            margin: 0;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'Lora', serif;
+            border: none;
+        }
+        .album-title.clickable {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .toggle-icon {
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .collapsible .content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            border-radius: 15px;
+        }
+        .collapsible.active .content {
+            display: grid;
+        }
+        .collapsible.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .clickable:hover {
+            color: #FFB6C1;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .photo-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            aspect-ratio: 1;
+            position: relative;
+        }
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-item {
+            aspect-ratio: 1;
+        }
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .video-item:hover {
+            transform: scale(1.05);
+        }
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
+        @media (max-width: 768px) {
+            .album-section {
+                width: 180px;
+                margin: 0.5rem;
+            }
+            .album-cover {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Photo Albums:</h1>
+        <main>
+            <div class="album-section">
+                <a href="first-month.html" class="album-cover">
+                    <img src="assets/first month/PXL_20241012_150854519~2.jpg" alt="First Month Album Cover">
+                    <h2 class="album-title">Our First Month</h2>
+                </a>
+            </div>
+
+            <div class="album-section">
+                <a href="gurudwara.html" class="album-cover">
+                    <img src="assets/gurudwara/gurudwara 1.jpg" alt="Gurudwara Album Cover">
+                    <h2 class="album-title">Gurudwara</h2>
+                </a>
+            </div>
+
+            <div class="album-section">
+                <a href="scooty.html" class="album-cover">
+                    <img src="assets/cover.jpg" alt="Scooty Album Cover">
+                    <h2 class="album-title">Scooty Rides</h2>
+                </a>
+            </div>
+
+            <div class="album-section">
+                <a href="first-stay.html" class="album-cover">
+                    <img src="assets/our first stay together/PXL_20240929_141750887.jpg" alt="First Stay Album Cover">
+                    <h2 class="album-title">Our First Stay Together</h2>
+                </a>
+            </div>
+
+            <div class="album-section">
+                <a href="first-ethnic.html" class="album-cover">
+                    <img src="assets/first ethnic together/PXL_20240928_142256976.jpg" alt="First Ethnic Together Album Cover">
+                    <h2 class="album-title">First Ethnic Together</h2>
+                </a>
+            </div>
+
+            <div class="album-section">
+                <a href="after-college-walks.html" class="album-cover">
+                    <img src="assets/after college walks/PXL_20240912_111922959.jpg" alt="After College Walks Album Cover">
+                    <h2 class="album-title">After College Walks</h2>
+                </a>
+            </div>
+
+            <div class="album-section">
+                <a href="our-nights.html" class="album-cover">
+                    <img src="assets/our nights/PXL_20250226_130923528.NIGHT.jpg" alt="Our Nights Album Cover">
+                    <h2 class="album-title">Our Nights</h2>
+                </a>
+            </div>
+
+            <div class="album-section">
+                <a href="our-flat-moments.html" class="album-cover">
+                    <img src="assets/our flat moment/PXL_20250414_121441064.jpg" alt="Our Flat Moments">
+                    <h2 class="album-title">Our Flat Moments</h2>
+                </a>
+            </div>
+
+            <div class="album-section">
+                <a href="koko.html" class="album-cover">
+                    <img src="assets/photo 4.jpg" alt="Koko Album Cover">
+                    <h2 class="album-title">Koko</h2>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <div class="hearts"></div>
+
+    <audio src="assets/and_i_love_her.mp3" autoplay loop></audio>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsible = document.querySelector('.collapsible');
+            const title = document.querySelector('.album-title');
+            
+            title.addEventListener('click', function() {
+                collapsible.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Nights - Our Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #FFB6C1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #FF8DA1;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+        .photo-item {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            aspect-ratio: 1;
+            position: relative;
+        }
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .photo-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .photo-item video:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: 'Lora', serif;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="photos.html" class="back-button">← Back to Albums</a>
+        <h1>Our Nights</h1>
+        
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20250226_130923528.NIGHT.jpg" alt="Our Nights 1">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20250225_103701951.jpg" alt="Our Nights 2">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20250115_160051484.jpg" alt="Our Nights 3">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241216_160509204.jpg" alt="Our Nights 4">
+            </div>
+            <div class="photo-item">
+                <video controls>
+                    <source src="assets/our nights/PXL_20241215_162452908.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241125_153339485.jpg" alt="Our Nights 5">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241106_154952276.jpg" alt="Our Nights 6">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241029_155055273.jpg" alt="Our Nights 7">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241028_152314813.jpg" alt="Our Nights 8">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241027_153036102.jpg" alt="Our Nights 9">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241027_153032547.jpg" alt="Our Nights 10">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241027_153019533.jpg" alt="Our Nights 11">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241027_152952024.jpg" alt="Our Nights 12">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241023_145905579.NIGHT.jpg" alt="Our Nights 13">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241023_145859869.NIGHT.jpg" alt="Our Nights 14">
+            </div>
+            <div class="photo-item">
+                <video controls>
+                    <source src="assets/our nights/PXL_20241017_133641876.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241011_140056229.jpg" alt="Our Nights 15">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241011_140045081.jpg" alt="Our Nights 16">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241005_161812112.jpg" alt="Our Nights 17">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20241005_161808339.jpg" alt="Our Nights 18">
+            </div>
+            <div class="photo-item">
+                <video controls>
+                    <source src="assets/our nights/PXL_20241005_152746849.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item">
+                <video controls>
+                    <source src="assets/our nights/PXL_20241002_080313817.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20240926_161226483.jpg" alt="Our Nights 19">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20240926_161208115.jpg" alt="Our Nights 20">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20240926_161204061.jpg" alt="Our Nights 21">
+            </div>
+            <div class="photo-item">
+                <video controls>
+                    <source src="assets/our nights/PXL_20240926_161140184.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20240925_152404160.jpg" alt="Our Nights 22">
+            </div>
+            <div class="photo-item">
+                <video controls>
+                    <source src="assets/our nights/PXL_20240923_160159845.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item">
+                <video controls>
+                    <source src="assets/our nights/PXL_20240923_152623148.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20240923_152615815.NIGHT.jpg" alt="Our Nights 23">
+            </div>
+            <div class="photo-item">
+                <video controls>
+                    <source src="assets/our nights/PXL_20240920_120217536.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20240918_153056077.jpg" alt="Our Nights 24">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20240916_161417107.jpg" alt="Our Nights 25">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/PXL_20240911_154234280.jpg" alt="Our Nights 26">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/IMG-20241010-WA0004.jpg" alt="Our Nights 27">
+            </div>
+            <div class="photo-item">
+                <img src="assets/our nights/IMG-20241010-WA0003.jpg" alt="Our Nights 28">
+            </div>
+            <div class="photo-item">
+                <video controls>
+                    <source src="assets/our nights/VID-20241010-WA0002.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div class="hearts"></div>
+    <audio src="assets/and_i_love_her.mp3" autoplay loop></audio>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letters - Our Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('assets/download.jpeg') no-repeat center center fixed;
+            background-size: 120% 120%;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Arial', sans-serif;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            -ms-interpolation-mode: nearest-neighbor;
+            image-rendering: pixelated;
+        }
+        .page-title {
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: var(--primary-color);
+            margin: 2rem 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Love Letters</h1>
+        <main>
+            <div class="letters-container">
+                <div class="letter-card">
+                    <h3>My Dearest</h3>
+                </div>
+
+                <div class="letter-card">
+                    <h3>To My Love</h3>
+                </div>
+
+                <!-- Add more letters as needed -->
+            </div>
+
+            <div class="add-letter">
+                <h2>Write a New Letter</h2>
+                <form id="letter-form">
+                    <input type="text" id="letter-title" placeholder="Title" required>
+                    <textarea id="letter-content" placeholder="Your message..." required></textarea>
+                    <button type="submit">Add Letter</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <div class="hearts"></div>
+
+    <audio src="assets/something_stupid.mp3" autoplay loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html> 

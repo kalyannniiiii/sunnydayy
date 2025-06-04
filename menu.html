@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a Memory</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('assets/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+        }
+        .menu-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 2.5rem;
+            background: var(--background-color);
+        }
+        .menu-option {
+            width: 350px;
+            max-width: 90vw;
+            padding: 2.5rem 0;
+            background: var(--card-background);
+            border-radius: 30px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            text-align: center;
+            font-size: 2.2rem;
+            font-family: 'Lora', serif;
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .menu-option:hover {
+            background: #ffe0f0;
+            transform: scale(1.04);
+        }
+    </style>
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div class="menu-top-row" style="display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2.5rem; margin-top: 4rem;">
+        <a href="photos.html" class="menu-option">📸 Photos</a>
+        <a href="letters.html" class="menu-option">💌 Letters</a>
+        <a href="guestbook.html" class="menu-option">📝 Guestbook</a>
+    </div>
+    <div class="menu-bottom-row" style="display: flex; justify-content: center; gap: 2.5rem;">
+        <a href="playlist.html" class="menu-option">🎵 Playlist</a>
+        <a href="puzzle.html" class="menu-option">🧩 Game</a>
+        <a href="map.html" class="menu-option">🗺️ Map</a>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scooty Photos - Our Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #FFB6C1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #FF8DA1;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+        .photo-item {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            aspect-ratio: 1;
+            position: relative;
+        }
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-item {
+            aspect-ratio: 1;
+        }
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .video-item:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: 'Lora', serif;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="photos.html" class="back-button">← Back to Albums</a>
+        <h1>Scooty Rides</h1>
+        
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20250108_144248853.jpg" alt="Scooty Ride 1">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20250108_144245397.jpg" alt="Scooty Ride 2">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20250108_144243217.jpg" alt="Scooty Ride 3">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241028_152306702.jpg" alt="Scooty Ride 4">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241022_161831577.jpg" alt="Scooty Ride 5">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241022_161828147.jpg" alt="Scooty Ride 6">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241011_134702228.jpg" alt="Scooty Ride 7">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241006_164523704.jpg" alt="Scooty Ride 8">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241006_164450302.jpg" alt="Scooty Ride 9">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241006_164401404.jpg" alt="Scooty Ride 10">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241006_164328082.jpg" alt="Scooty Ride 11">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241006_164321743.jpg" alt="Scooty Ride 12">
+            </div>
+            <div class="photo-item">
+                <img src="assets/scooty rides/PXL_20241001_162301188.jpg" alt="Scooty Ride 13">
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241022_161637897.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241022_161619245.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241011_134710011.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241006_174124183.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241006_174108814.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241006_174103234.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241006_164349541.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241006_164337103.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241003_150252088.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241001_162322399.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241001_162558673.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241001_162515083.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="photo-item video-item">
+                <video controls>
+                    <source src="assets/scooty rides/PXL_20241001_162346889.TS.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div class="hearts"></div>
+    <audio src="assets/and_i_love_her.mp3" autoplay loop></audio>
+    <script src="script.js"></script>
+</body>
+</html> 
